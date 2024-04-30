@@ -1,11 +1,10 @@
-<!-- page.svelte -->
 
 <script>
-    // TAB 바에 사용될 항목들
+
     let tabs = [
         { id: 1, title: 'Home', active: true },
-        { id: 2, title: 'About', active: false },
-        { id: 3, title: 'Contact', active: false }
+        { id: 2, title: '모임 만들기', active: false },
+        { id: 3, title: '스터디 찾기', active: false }
     ];
     
     // TAB을 클릭할 때 호출되는 함수
@@ -18,7 +17,7 @@
 </script>
 
 <style>
-    /* 네비게이션 바 스타일 */
+    
     .navbar {
         background-color: orange;
         color: white;
@@ -30,29 +29,63 @@
 
     .navbar > div:first-child {
         margin-left: 20px;
-        font-size: 28px; /* 크기를 키움 */
+        font-size: 28px;
         font-weight: bold;
     }
-    /* TAB 스타일 */
+
     .tab {
-    display: inline-block; /* 인라인 요소로 변경하여 가로로 정렬 */
+    display: inline-block;
     padding: 10px;
     cursor: pointer;
-    margin-right: 10px; /* TAB 사이 간격 조절 */
-    text-decoration: none; /* 밑줄 제거 */
+    margin-right: 10px;
+    text-decoration: none;
     }
 
-    /* 활성화된 TAB 스타일 */
     .active {
         font-weight: bold;
     }
+
+    .footer-container {
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+        background-color: #f0f0f0;
+        padding: 20px;
+        align-items: center;
+    }
+
+    .footer-text {
+        color: #333;
+        font-size: 14px;
+        text-align: center;
+    }
+
+    .highlighted {
+        color: orange;
+        margin-right: 8px;
+        margin-left: 25px;
+        font-weight: bold;
+        font-size: 25px;
+    }
+    .left-content {
+        display: flex;
+        align-items: center;
+        margin-right: auto;
+    }
+
+    .right-content {
+        display: flex;
+        flex-direction: column;
+        margin-left: 980px;
+        margin-top: -35px; 
+    }   
 </style>
 
 <!-- 네비게이션 바 -->
 <div class="navbar">
-    <!-- 왼쪽에 "STUDY MOA" 제목 -->
+    
     <div>STUDY MOA</div>
-    <!-- 오른쪽에 TAB 바 -->
+    
     <div class="tab-container">
         {#each tabs as tab}
             <div 
@@ -69,5 +102,26 @@
                 {tab.title}
             </div>
         {/each}
+    </div>
+</div>
+
+
+
+
+
+<div class="footer-container">
+    <div class="left-content">
+        <div class="footer-text highlighted">STUDY MOA</div>
+        <div class="footer-text">
+            | 개인정보 처리방침 | 이용약관
+        </div>
+    </div>
+    <div class="right-content">
+        <div class="footer-text">
+            이메일: studymoa_1@000000.com
+        </div>
+        <div class="footer-text">
+            전화번호: 02-000-0000
+        </div>
     </div>
 </div>
