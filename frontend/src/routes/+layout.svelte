@@ -39,6 +39,19 @@ nav {
     margin-left: 0;
   }
   
+
+
+.site-footer {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #d7d7d7; /* Gray background */
+    color: rgb(0, 0, 0); /* White text color */
+    text-align: center; /* Center-aligned text */
+    padding: 10px 0; /* 10px top and bottom padding, 0 padding on the sides */
+    font-size: 16px; /* Font size */
+}
 </style>
 
 
@@ -54,3 +67,7 @@ nav {
 </nav>
 
 <slot />
+
+<footer class="site-footer">
+    <p>&copy; 2024 STUDY_MOA. All rights reserved.</p>
+</footer>
