@@ -41,17 +41,40 @@ nav {
   
 
 
-.site-footer {
-    position: fixed;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: #d7d7d7; /* Gray background */
-    color: rgb(0, 0, 0); /* White text color */
-    text-align: center; /* Center-aligned text */
-    padding: 10px 0; /* 10px top and bottom padding, 0 padding on the sides */
-    font-size: 16px; /* Font size */
-}
+  .footer-container {
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+        background-color: #f0f0f0;
+        padding: 20px;
+        align-items: center;
+    }
+
+    .footer-text {
+        color: #333;
+        font-size: 14px;
+        text-align: center;
+    }
+
+    .highlighted {
+        color: orange;
+        margin-right: 8px;
+        margin-left: 25px;
+        font-weight: bold;
+        font-size: 25px;
+    }
+    .left-content {
+        display: flex;
+        align-items: center;
+        margin-right: auto;
+    }
+
+    .right-content {
+        display: flex;
+        flex-direction: column;
+        margin-left: 980px;
+        margin-top: -35px; 
+    }
 </style>
 
 
@@ -68,6 +91,20 @@ nav {
 
 <slot />
 
-<footer class="site-footer">
-    <p>&copy; 2024 STUDY_MOA. All rights reserved.</p>
-</footer>
+
+<div class="footer-container">
+  <div class="left-content">
+      <div class="footer-text highlighted">STUDY MOA</div>
+      <div class="footer-text">
+          | 개인정보 처리방침 | 이용약관
+      </div>
+  </div>
+  <div class="right-content">
+      <div class="footer-text">
+          이메일: studymoa_1@000000.com
+      </div>
+      <div class="footer-text">
+          전화번호: 02-000-0000
+      </div>
+  </div>
+</div>
