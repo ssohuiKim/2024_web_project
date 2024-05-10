@@ -5,19 +5,44 @@
 </script>
 
 <style>
-  .header{
-    text-align: center;
-    background-color: #303030;
-    color: white;
-    height: 60px;
-    justify-content: center;
+ .header{
+  text-align: center;
+  background-color: #303030;
+  color: white;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.header h1 {
+  font-size: 20px;
+  margin: 0;
+}
+
+
+  .tabs {
+    margin-left: 290px;
+    margin-bottom: 27px;
+    margin-top: 50px;
+    max-width: 900px;
+  }
+  .tabs button {
+    background-color: white; 
+    margin: 0 10px;
+    border: none;
+    font-size: 18px;
   }
 
-  .header h1 {
-    font-size: 20px;
-    margin-top: auto;
-    margin-bottom: auto;
+  .tabs::after {
+    content: "";
+    display: block;
+    margin: 5px 0;
+    height: 1px;
+    background: black;
+    width: 100%; 
   }
+
 
   .container {
     margin-left: auto;

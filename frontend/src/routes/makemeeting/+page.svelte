@@ -90,7 +90,7 @@
     }
 
     button:hover {
-    background-color: grey; /* 마우스 오버시 버튼 색상을 변경합니다. */
+    background-color: grey; /* 마우스 오버시 버튼 색상 변경 */
     }
 
   </style>
