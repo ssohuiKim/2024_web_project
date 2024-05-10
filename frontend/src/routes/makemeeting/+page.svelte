@@ -1,5 +1,5 @@
 <script>
-
+    import { meetings } from  '../../stores.js';
     let title = '';
     let date = '';
     let content = '';
@@ -65,14 +65,16 @@
       margin-right: 10px;
     }
     #title{
-        width: 93%;;
+        width: 93%;
+        height: 23px;
     }
     #date{
         width: 35%;
+        height: 23px;
     }
     #content {
     width: 93%;
-    height: 150px;
+    height: 200px;
     box-sizing: border-box;
     }
 
