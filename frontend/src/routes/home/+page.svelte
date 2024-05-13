@@ -27,7 +27,11 @@
 		height: 17rem;
 		width: 33rem;
 }
-	
+
+span[slot="left-control"], span[slot="right-control"] {
+    font-size: 50px;
+}
+
 </style>
 
 <div class="header">
@@ -38,8 +42,8 @@
     {#each colors as color, index (index)}
       <div class="carousel-square" style="background-color: {color}" />
     {/each}
-    <span slot="left-control">Left</span>
-    <span slot="right-control">Right</span>
+    <span slot="left-control">&lt;</span>
+    <span slot="right-control">&gt;</span>
 </Carousel>
 
   
