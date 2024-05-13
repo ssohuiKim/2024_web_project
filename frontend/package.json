@@ -20,6 +20,7 @@
 	"type": "module",
 	"dependencies": {
 		"flowbite-svelte": "^0.46.1",
+		"siema": "^1.5.1",
 		"svelte-routing": "^2.12.0"
 	}
 }
