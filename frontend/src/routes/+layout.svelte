@@ -1,5 +1,7 @@
 <script>
-
+  import "../app.css";
+  import { Navbar, NavBrand, NavLi, NavUl, NavHamburger, Button, Input } from 'flowbite-svelte';
+  import { Footer, FooterCopyright, FooterLinkGroup, FooterBrand, FooterLink } from 'flowbite-svelte';
 </script>
 
 
@@ -40,7 +42,7 @@ nav {
   }
   
 
-
+/* 
   .footer-container {
         position: fixed;
         bottom: 0;
@@ -66,33 +68,29 @@ nav {
     .left-content {
         display: flex;
         align-items: center;
-        margin-right: auto;
     }
 
     .right-content {
         display: flex;
         flex-direction: column;
-        margin-left: 980px;
         margin-top: -35px; 
-    }
+    } */
 </style>
 
 
-<nav>
+<!-- <nav>
 <div class="nav-title">
   <a href="/" style="margin-right: auto;">STUDY_MOA</a>
 </div>
 <div class="nav-links">
-  <a href="/home">홈</a>
   <a href="/makemeeting">모임 만들기</a>
   <a href="/findingstudy">참여하기</a>
 </div>
-</nav>
-
-<slot />
+</nav> -->
 
 
-<div class="footer-container">
+
+<!-- <div class="footer-container">
   <div class="left-content">
       <div class="footer-text highlighted">STUDY MOA</div>
       <div class="footer-text">
@@ -107,4 +105,32 @@ nav {
           전화번호: 02-000-0000
       </div>
   </div>
-</div>
+</div> -->
+<Navbar  >
+  <NavBrand href="/">
+    <img src="/images/flowbite-svelte-icon-logo.svg" class="me-3 h-6 sm:h-9" alt="Flowbite Logo" />
+    <span class="self-center whitespace-nowrap text-xl font-semibold dark:text-white">Flowbite</span>
+  </NavBrand>
+  <NavHamburger  />
+  <NavUl >
+    <NavLi href="/">Home</NavLi>
+    <NavLi href="/about">About</NavLi>
+    <NavLi href="/docs/components/navbar">Navbar</NavLi>
+    <NavLi href="/pricing">Pricing</NavLi>
+    <NavLi href="/contact">Contact</NavLi>
+  </NavUl>
+</Navbar>
+
+<Footer footerType="logo">
+  <div class="sm:flex sm:items-center sm:justify-between">
+    <div class="text-lg font-bold text-gray-900 dark:text-white">STUDY_MOA</div>
+    <FooterLinkGroup ulClass="flex flex-wrap items-center mb-6 text-sm text-gray-500 sm:mb-0 dark:text-gray-400">
+      <FooterLink href="/">About</FooterLink>
+      <FooterLink href="/">Privacy Policy</FooterLink>
+      <FooterLink href="/">Licensing</FooterLink>
+      <FooterLink href="/">Contact</FooterLink>
+    </FooterLinkGroup>
+  </div>
+  <hr class="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
+  <FooterCopyright href="/" by=" " />
+</Footer>
