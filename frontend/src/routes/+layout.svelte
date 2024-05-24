@@ -17,7 +17,7 @@
     <NavUl class="flex order-1">
       <NavLi href="/" active={true}>Home</NavLi>
       <NavLi href="/makemeeting">모집하기</NavLi>
-      <NavLi href="/findingstudy" class="mr-4">참여하기</NavLi>
+      <NavLi href="/findingstudy">참여하기</NavLi>
     </NavUl>
     <div class="flex md:order-2">
       <Button class="bg-orange-400 text-white hover:bg-orange-600" size="sm">
@@ -27,8 +27,7 @@
     </div>
   </div>
 </Navbar>
-
-
+<slot />
 <Footer footerType="logo" class="fixed bottom-0 left-0 right-0 mx-auto w-full max-w-screen-lg">
   <div class="sm:flex sm:items-center sm:justify-between">
     <span class="text-lg font-bold text-orange-400 text-2xl">STUDY_MOA</span>
