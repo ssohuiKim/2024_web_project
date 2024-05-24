@@ -1,4 +1,4 @@
-<script>
+<!-- <script>
     import { meetings } from  '../../stores.js';
     let title = '';
     let date = '';
@@ -33,65 +33,35 @@
     </form>
   </div>
   
-  <style>
-    .form-container {
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    margin-top: 20px;
-    max-width: 700px;
-    padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    margin-right: auto;
-    margin-left: auto;
-    }
+   -->
 
-    h2 {
-        margin-top: 40px;
-        margin-bottom: 30px;
-        font-size: 20px;
-        text-align: center;
-    }
+<script>
+  import { Input, Label, Helper } from 'flowbite-svelte';
+  import { MultiSelect, Badge } from 'flowbite-svelte';
 
-    form > div {
-      display: flex;
-      align-items: center;
-      margin-bottom: 1rem;
-    }
+  let countries = [
+    { value: 'english', name: '어학'},
+    { value: 'job', name: '취업스터디'},
+    { value: 'contest', name: '대회/공모전'},
+    { value: 'certificate', name: '자격증'},
+    { value: 'book', name: '북클럽'}
+  ];
+  let selected = ['english', 'certificate'];
+</script>
 
-    label {
-      margin-right: 10px;
-    }
-    #title{
-        width: 93%;
-        height: 23px;
-    }
-    #date{
-        width: 35%;
-        height: 23px;
-    }
-    #content {
-    width: 93%;
-    height: 200px;
-    box-sizing: border-box;
-    }
-
-    button {
-    width: 100%;
-    padding: 10px;
-    border: none;
-    background-color: orange;
-    color: rgb(255, 255, 255);
-    cursor: pointer;
-    font-weight: bold;
-    border-radius: 5px;
-    }
-
-    button:hover {
-    background-color: grey; /* 마우스 오버시 버튼 색상 변경 */
-    }
-
-  </style>
-    
+<div class="max-w-screen-lg mx-auto">
+  <span class="text-3xl font-bold">
+    <span class="text-orange-400">STUDY_MOA</span> 모임 정보 입력하기
+  </span>
+  
+  
+  <Label class="space-y-2">
+    <span>모임명</span>
+    <Input type="email" placeholder="모임명을 입력하세요" size="md" />
+  </Label>
+  
+  <Label for="countries">모임분류</Label>
+  <div>
+    <MultiSelect items={countries} bind:value={selected} />
+  </div>
+</div>
