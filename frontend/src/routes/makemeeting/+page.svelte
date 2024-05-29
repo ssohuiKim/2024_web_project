@@ -1,44 +1,13 @@
-<!-- <script>
-    import { meetings } from  '../../stores.js';
-    let title = '';
-    let date = '';
-    let content = '';
-  
-    function submitMeeting() {
-        meetings.update(currentMeetings => {
-            return [...currentMeetings, { title, date, content }];
-        });
-        title = '';
-        date = '';
-        content = '';
-    }
-  </script>
-  
-  <h2>모집글 쓰기</h2>
-  <div class="form-container">
-    <form on:submit|preventDefault={submitMeeting}>
-      <div>
-        <label for="title">제목</label>
-        <input id="title" type="text" bind:value={title}>
-      </div>
-      <div>
-        <label for="date">날짜</label>
-        <input id="date" type="date" bind:value={date}>
-      </div>
-      <div>
-        <label for="content">내용</label>
-        <textarea id="content" bind:value={content}></textarea>
-      </div>
-      <button type="submit">등록하기</button>
-    </form>
-  </div>
-  
-   -->
-
 <script>
   import { Input, Label, Helper } from 'flowbite-svelte';
   import { MultiSelect, Badge } from 'flowbite-svelte';
   import { Textarea, Button } from 'flowbite-svelte';
+  import { goto } from '$app/navigation';
+
+  function navigateToFindingStudy() {
+    goto('/findingstudy');
+  }
+
 
   let startDate = '';
   let startTime = '';
@@ -106,7 +75,7 @@
   
   <Label for="textarea-id" class="mb-2 mt-6">상세내용</Label>
   <Textarea id="textarea-id" placeholder="모임을 소개해주세요" rows="8" name="message" />
-  <Button class="bg-orange-400 text-white hover:bg-orange-600 mt-8" size="sm">
+  <Button class="bg-orange-400 text-white hover:bg-orange-600 mt-8" on:click={navigateToFindingStudy} size="sm">
     모집글 등록
   </Button>
 </div>
