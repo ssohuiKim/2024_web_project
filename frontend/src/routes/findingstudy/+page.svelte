@@ -17,19 +17,21 @@
 
 </script>
 
-<div class="max-w-screen-lg mx-auto h-screen overflow-auto">
+<div class="max-w-screen-lg mx-auto h-screen overflow-auto"> 
+
   <Tabs>
     {#if storedMeetingInfo.length > 0}
       <TabItem open title="모집 중인 모임">
+        
         {#each storedMeetingInfo as meeting}
-          {#if new Date(meeting.applyDate) <= currentDate}
+          {#if new Date(meeting.applyDate) >= currentDate}
             <h1>{meeting.meetingName}</h1>
           {/if}
         {/each}
       </TabItem>
       <TabItem title="종료된 모임">
         {#each storedMeetingInfo as meeting}
-          {#if new Date(meeting.applyDate) > currentDate}
+          {#if new Date(meeting.applyDate) < currentDate}
             <h1>{meeting.meetingName}</h1>
           {/if}
         {/each}
@@ -39,26 +41,3 @@
     {/if}
   </Tabs>
 </div>
-
-
-
-<!-- <div class="max-w-screen-lg mx-auto h-screen overflow-auto">
-  {#if storedMeetingInfo.length > 0}
-    <TabItem open title="모집 중인 모임">
-      {#each storedMeetingInfo as meeting}
-        {#if new Date(meeting.applyDate) <= currentDate}
-          <h1>{meeting.meetingName}</h1>
-        {/if}
-      {/each}
-    </TabItem>
-    <TabItem title="종료된 모임">
-      {#each storedMeetingInfo as meeting}
-        {#if new Date(meeting.applyDate) > currentDate}
-          <h1>{meeting.meetingName}</h1>
-        {/if}
-      {/each}
-    </TabItem>
-  {:else}
-    <p>No meetings available.</p>
-  {/if}
-</div> -->
