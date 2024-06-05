@@ -30,16 +30,16 @@
 <div class="max-w-screen-lg mx-auto border-b border-gray-200"></div>
 <slot />
 
-<Footer footerType="logo" class="fixed bottom-0 left-0 right-0 mx-auto w-full max-w-screen-lg">
+<Footer footerType="logo" class="left-0 right-0 mx-auto w-full max-w-screen-lg py-2">
   <div class="sm:flex sm:items-center sm:justify-between">
     <span class="text-lg font-bold text-orange-400 text-2xl">STUDY_MOA</span>
-    <FooterLinkGroup ulClass="flex flex-wrap items-center mb-6 text-sm text-gray-500 sm:mb-0 dark:text-gray-400">
+    <FooterLinkGroup ulClass="flex flex-wrap items-center mb-2 text-sm text-gray-500 sm:mb-0 dark:text-gray-400">
       <FooterLink href="/">About</FooterLink>
       <FooterLink href="/">Privacy Policy</FooterLink>
       <FooterLink href="/">Licensing</FooterLink>
       <FooterLink href="/">Contact</FooterLink>
     </FooterLinkGroup>
   </div>
-  <hr class="my-6 sm:mx-auto lg:my-8" />
-  <FooterCopyright href="/" by="STUDY_MOA" class="h-8"/>
+  <hr class="my-2 sm:mx-auto lg:my-4" />
+  <FooterCopyright href="/" by="STUDY_MOA" class="h-4"/>
 </Footer>

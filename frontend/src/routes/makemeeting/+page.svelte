@@ -70,10 +70,10 @@
       <Input id="meeting-name" type="text" placeholder="모임명을 입력하세요" size="md" bind:value={meetingName} />
     </Label>
     
-    <Label for="categories" class="mt-6">모임분류</Label>
-    <div>
+    <Label for="categories" class="space-y-2 mt-6">
+      <span>모임분류</span>
       <MultiSelect id="categories" items={categories} bind:value={selectedCategories} />
-    </div>
+    </Label>
 
     <Label for="meeting-date" class="space-y-2 mt-6">
       <span>모임날짜</span>
@@ -96,7 +96,7 @@
     </Label>
 
     <Label for="apply-info" class="space-y-2 mt-6">
-      <span>신청</span>
+      <span>*신청*</span>
       <div class="flex items-center space-x-2">
         <span>정원</span>
         <Input id="capacity" type="number" placeholder="모임인원" size="md" bind:value={capacity} class="w-1/6" />
@@ -109,9 +109,9 @@
     
     <Label for="details" class="mb-2 mt-6">상세내용</Label>
     <Textarea id="details" placeholder="모임을 소개해주세요" rows="8" bind:value={details} name="message" />
-    <div class="mb-50">
-      <Button type="submit" class="bg-orange-400 text-white hover:bg-orange-600 mt-8" size="sm">
-        모집글 등록
+    <div>
+      <Button type="submit" class="bg-orange-400 text-white hover:bg-orange-600 mt-4 mb-8" size="sm">
+      모집글 등록
       </Button>
     </div>
   </form>

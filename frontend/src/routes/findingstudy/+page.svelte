@@ -18,7 +18,6 @@
 </script>
 
 <div class="max-w-screen-lg mx-auto h-screen overflow-auto"> 
-
   <Tabs>
     {#if storedMeetingInfo.length > 0}
       <TabItem open title="모집 중인 모임">
