@@ -41,7 +41,6 @@
       }
     ]);
 
-    // 폼 필드 초기화
     meetingName = '';
     startDate = '';
     startTime = '';
@@ -53,7 +52,6 @@
     details = '';
     selectedCategories = [];
 
-    // 페이지 이동
     navigateToFindingStudy();
   }
 
@@ -111,8 +109,10 @@
     
     <Label for="details" class="mb-2 mt-6">상세내용</Label>
     <Textarea id="details" placeholder="모임을 소개해주세요" rows="8" bind:value={details} name="message" />
-    <Button type="submit" class="bg-orange-400 text-white hover:bg-orange-600 mt-8" size="sm">
-      모집글 등록
-    </Button>
+    <div class="mb-50">
+      <Button type="submit" class="bg-orange-400 text-white hover:bg-orange-600 mt-8" size="sm">
+        모집글 등록
+      </Button>
+    </div>
   </form>
 </div>
