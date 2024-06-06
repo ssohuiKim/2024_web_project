@@ -89,3 +89,4 @@
       STUDY MOA 덕분에 친구도 사귀고 공부도 잘 했습니당👍👍👍</p>
     <p class="mb-1 text-xs font-normal text-gray-700 dark:text-gray-400 leading-tight">2024.05.12 / 박**님 외 3명</p>
   </Card>
+</div>
