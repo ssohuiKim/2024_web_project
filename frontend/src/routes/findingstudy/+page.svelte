@@ -34,7 +34,7 @@
             <button class="cursor-pointer" on:click={() => showMeetingDetails(meeting)} on:keydown={(event) => {if (event.key === 'Enter') showMeetingDetails(meeting)}}>
               {meeting.meetingName}
             </button>
-            <span style="font-size: smaller; color: orange; float: right;">
+            <span style="font-size: medium; color: orange; float: right; font-weight: bold;">
               {(() => {
                 const applyDate = new Date(meeting.applyDate);
                 const diffTime = applyDate - currentDate;
@@ -66,9 +66,20 @@
   {#if selectedMeeting}
     <div class="fixed top-0 left-0 w-full h-full bg-gray-300 bg-opacity-75 flex items-center justify-center z-50">
       <div class="bg-white p-6 rounded-lg shadow-lg">
-        <h2 class="text-2xl font-bold mb-4">{selectedMeeting.meetingName}</h2>
-        <p>{selectedMeeting.meetingDescription}</p>
-        <button class="mt-4 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" on:click={() => selectedMeeting = null}>닫기</button>
+        <h2 class="text-2xl font-bold mb-4">🙌 {selectedMeeting.meetingName}</h2>
+        <hr class="my-3 border-gray-300">
+        <p>👉모임 날짜: {selectedMeeting.startDate} {selectedMeeting.startTime} ~ {selectedMeeting.endDate} {selectedMeeting.endTime}</p>
+        <p>👉모임 장소: {selectedMeeting.location}</p>
+        <p>👉모집 기간: {selectedMeeting.applyDate}</p>
+        <p>👉모임 인원: {selectedMeeting.currentParticipants}/{selectedMeeting.capacity}</p>
+        <p>👉상세: </p>
+        <p>{selectedMeeting.details}</p>
+        <button class="mt-4 bg-blue-400 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded" on:click={() => {
+          if (selectedMeeting.capacity > selectedMeeting.currentParticipants) {
+            selectedMeeting.currentParticipants += 1;
+          }
+        }}>신청하기</button>
+        <button class="mt-4 bg-orange-400 hover:bg-orange-600 text-white font-bold py-2 px-4 rounded" on:click={() => selectedMeeting = null}>닫기</button>
       </div>
     </div>
   {/if}

@@ -35,7 +35,8 @@
         endTime, 
         applyDate, 
         location, 
-        capacity, 
+        capacity,
+        currentParticipants: 1,
         details,
         selectedCategories
       }
@@ -54,6 +55,7 @@
 
     navigateToFindingStudy();
   }
+
 
   function navigateToFindingStudy() {
     goto(`/findingstudy`);
