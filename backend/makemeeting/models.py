@@ -1,7 +1,7 @@
 from django.db import models
 
 class Meeting(models.Model):
-    meeting_name = models.CharField(max_length=255)
+    meeting_name = models.CharField(max_length=25)
     start_date = models.DateField()
     start_time = models.TimeField()
     end_date = models.DateField()

@@ -22,25 +22,46 @@
     { value: 'certificate', name: '자격증'},
     { value: 'book', name: '북클럽'}
   ];
-  let selectedCategories = [];
+  let selectedCategories = ['english', 'job'];
 
-  function saveMeetingInfo() {
+  async function saveMeetingInfo() {
+    const newMeeting = {
+      meeting_name: meetingName,
+      start_date: startDate, 
+      start_time: startTime, 
+      end_date: endDate, 
+      end_time: endTime, 
+      apply_date: applyDate, 
+      location, 
+      capacity: parseInt(capacity),
+      current_participants: 1,
+      details,
+      selected_categories: selectedCategories.filter(category => category != null).map(category => category.value)
+    };
+
     meetingInfo.update(currentMeetings => [
       ...currentMeetings,
-      { 
-        meetingName, 
-        startDate, 
-        startTime, 
-        endDate, 
-        endTime, 
-        applyDate, 
-        location, 
-        capacity,
-        currentParticipants: 1,
-        details,
-        selectedCategories
-      }
+      newMeeting
     ]);
+
+    try {
+      const response = await fetch('http://127.0.0.1:8000/api/meetings/', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(newMeeting)
+      });
+
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
+      }
+
+      const data = await response.json();
+      console.log('Success:', data);
+    } catch (error) {
+      console.error('Error:', error);
+    }
 
     meetingName = '';
     startDate = '';
@@ -56,11 +77,11 @@
     navigateToFindingStudy();
   }
 
-
   function navigateToFindingStudy() {
     goto(`/findingstudy`);
   }
 </script>
+
 
 <div class="max-w-screen-lg mx-auto h-screen overflow-auto mt-6">
   <span class="text-2xl font-bold">
