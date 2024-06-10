@@ -1,4 +1,3 @@
-
 <script>
   import { Input, Label, Helper } from 'flowbite-svelte';
   import { MultiSelect, Badge } from 'flowbite-svelte';
@@ -63,7 +62,7 @@
   }
 </script>
 
-<div class="max-w-screen-lg mx-auto h-screen overflow-auto">
+<div class="max-w-screen-lg mx-auto h-screen overflow-auto mt-6">
   <span class="text-2xl font-bold">
     <span class="text-orange-400">STUDY_MOA</span>에 모임 정보 입력하기
   </span>
