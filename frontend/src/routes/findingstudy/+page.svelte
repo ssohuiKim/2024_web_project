@@ -4,7 +4,7 @@
   import { Tabs, TabItem } from 'flowbite-svelte';
   import { format } from 'date-fns';
   import { List, Li } from 'flowbite-svelte';
-  import { Button} from 'flowbite-svelte';
+  import { Button } from 'flowbite-svelte';
 
   let meetings = [];
   let currentDate = new Date();
@@ -19,14 +19,16 @@
   // 데이터를 불러오는 함수
   async function fetchMeetings() {
     try {
-      const response = await fetch('http://127.0.0.1:8000/api/meetings/');
+      const response = await fetch('http://localhost:8500/api/meetings/');
       if (!response.ok) {
-        throw new Error('네트워크 응답이 올바르지 않습니다.');
+        throw new Error(`네트워크 응답이 올바르지 않습니다. 상태 코드: ${response.status}`);
       }
       const data = await response.json();
       meetings = data;
+      console.log(meetings);  // 데이터를 확인하기 위해 추가
     } catch (err) {
       error = err.message;
+      console.error(`데이터를 불러오는 도중 오류 발생: ${err}`);  // 오류 메시지를 확인하기 위해 추가
     } finally {
       loading = false;
     }
@@ -35,7 +37,7 @@
   // 모임을 삭제하는 함수
   async function deleteMeeting(meetingId) {
     try {
-      const response = await fetch(`http://127.0.0.1:8000/api/meetings/${meetingId}/`, {
+      const response = await fetch(`http://localhost:8500/api/meetings/${meetingId}/`, {
         method: 'DELETE'
       });
       if (!response.ok) {
@@ -46,6 +48,7 @@
       selectedMeeting = null;
     } catch (err) {
       error = err.message;
+      console.error(err);  // 오류 메시지를 확인하기 위해 추가
     }
   }
 

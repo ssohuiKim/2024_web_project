@@ -28,10 +28,6 @@
   </div>
 </Navbar>
 
-
-
-
-
 <div class="max-w-screen-lg mx-auto border-b border-gray-200"></div>
 <slot />
 
