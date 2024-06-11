@@ -4,6 +4,7 @@
   import { Tabs, TabItem } from 'flowbite-svelte';
   import { format } from 'date-fns';
   import { List, Li } from 'flowbite-svelte';
+  import { Button} from 'flowbite-svelte';
 
   let meetings = [];
   let currentDate = new Date();
@@ -96,7 +97,10 @@
   {#if selectedMeeting}
     <div class="fixed top-0 left-0 w-full h-full bg-gray-300 bg-opacity-75 flex items-center justify-center z-50">
       <div class="bg-white p-6 rounded-lg shadow-lg">
-        <h2 class="text-2xl font-bold mb-4">🙌 {selectedMeeting.meeting_name}</h2>
+        <div class="flex justify-between items-center">
+          <h2 class="text-2xl font-bold">🙌 {selectedMeeting.meeting_name}</h2>
+          <button class="text-2xl bg-white text-black font-bolder py-2 px-4 rounded" on:click={() => selectedMeeting = null}>X</button>
+        </div>
         <hr class="my-3 border-gray-300">
         <p>👉모임 날짜: {selectedMeeting.start_date} {selectedMeeting.start_time.slice(0, 5)} ~ {selectedMeeting.end_date} {selectedMeeting.end_time.slice(0, 5)}</p>
         <p>👉모임 장소: {selectedMeeting.location}</p>
@@ -104,13 +108,14 @@
         <p>👉모임 인원: {selectedMeeting.current_participants}/{selectedMeeting.capacity}</p>
         <p>👉상세: </p>
         <p>{selectedMeeting.details}</p>
-        <button class="mt-4 bg-blue-400 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded" on:click={() => {
-          if (selectedMeeting.capacity > selectedMeeting.current_participants) {
-            selectedMeeting.current_participants += 1;
-          }
-        }}>신청하기</button>
-        <button class="mt-4 bg-orange-400 hover:bg-orange-600 text-white font-bold py-2 px-4 rounded" on:click={() => selectedMeeting = null}>닫기</button>
-        <button class="mt-4 bg-red-400 hover:bg-red-600 text-white font-bold py-2 px-4 rounded" on:click={() => deleteMeeting(selectedMeeting.id)}>삭제하기</button>
+        <div class="flex justify-between items-center mt-4">
+          <Button class="bg-red-400 hover:bg-red-600 text-white font-bold py-2 px-4 rounded" on:click={() => deleteMeeting(selectedMeeting.id)}>삭제하기</Button>
+          <Button class="bg-blue-400 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded" on:click={() => {
+            if (selectedMeeting.capacity > selectedMeeting.current_participants) {
+              selectedMeeting.current_participants += 1;
+            }
+          }}>신청하기</Button>
+        </div>
       </div>
     </div>
   {/if}

@@ -36,7 +36,7 @@
       capacity: parseInt(capacity),
       current_participants: 1,
       details,
-      selected_categories: selectedCategories.filter(category => category != null).map(category => category.value)
+      selected_categories: selectedCategories.filter(category => category != null).map(category => category.valueOf)
     };
 
     meetingInfo.update(currentMeetings => [
