@@ -42,9 +42,10 @@ STUDY_MOA는 다양한 스터디 모임을 쉽게 찾고 참여할 수 있도록
 
 3. 필요한 패키지를 설치합니다.
 [패키지 확인](/packages.txt)
-
     ```bash
-        
+    npm install
+    npm install flowbite-svelte svelte@latest @sveltejs/kit tailwindcss date-fns
+    pip install django djangorestframework
     ```
 
 4. 데이터베이스를 설정합니다.
