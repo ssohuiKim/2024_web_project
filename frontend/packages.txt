@@ -1,0 +1,67 @@
+/frontend
+├── @sveltejs/adapter-auto@3.2.0
+├── @sveltejs/kit@2.5.6
+├── @sveltejs/vite-plugin-svelte@3.1.0
+├── asynckit@0.4.0 extraneous
+├── autoprefixer@10.4.19
+├── axios@1.7.2 extraneous
+├── combined-stream@1.0.8 extraneous
+├── date-fns@3.6.0
+├── delayed-stream@1.0.0 extraneous
+├── flowbite-svelte@0.46.1
+├── follow-redirects@1.15.6 extraneous
+├── form-data@4.0.0 extraneous
+├── mime-db@1.52.0 extraneous
+├── mime-types@2.1.35 extraneous
+├── postcss@8.4.38
+├── proxy-from-env@1.1.0 extraneous
+├── siema@1.5.1
+├── svelte-routing@2.13.0
+├── svelte@4.2.15
+├── tailwindcss@3.4.3
+└── vite@5.2.9
+/backend
+_libgcc_mutex             0.1                 conda_forge    conda-forge
+_openmp_mutex             4.5                       2_gnu    conda-forge
+annotated-types           0.6.0              pyhd8ed1ab_0    conda-forge
+asgiref                   3.8.1              pyhd8ed1ab_0    conda-forge
+bzip2                     1.0.8                hd590300_5    conda-forge
+ca-certificates           2024.6.2             hbcca054_0    conda-forge
+cffi                      1.16.0                   pypi_0    pypi
+contextlib2               21.6.0                   pypi_0    pypi
+cryptography              42.0.5                   pypi_0    pypi
+django                    5.0.6              pyhd8ed1ab_0    conda-forge
+django-cors-headers       4.3.1                    pypi_0    pypi
+django-ninja              1.1.0              pyhd8ed1ab_0    conda-forge
+django-ninja-extra        0.20.6                   pypi_0    pypi
+django-ninja-jwt          5.3.1                    pypi_0    pypi
+djangorestframework       3.15.1             pyhd8ed1ab_0    conda-forge
+injector                  0.21.0                   pypi_0    pypi
+ld_impl_linux-64          2.40                 h41732ed_0    conda-forge
+libexpat                  2.6.2                h59595ed_0    conda-forge
+libffi                    3.4.2                h7f98852_5    conda-forge
+libgcc-ng                 13.2.0               h807b86a_5    conda-forge
+libgomp                   13.2.0               h807b86a_5    conda-forge
+libnsl                    2.0.1                hd590300_0    conda-forge
+libsqlite                 3.45.2               h2797004_0    conda-forge
+libuuid                   2.38.1               h0b41bf4_0    conda-forge
+libxcrypt                 4.4.36               hd590300_1    conda-forge
+libzlib                   1.2.13               hd590300_5    conda-forge
+ncurses                   6.4.20240210         h59595ed_0    conda-forge
+openssl                   3.3.1                h4ab18f5_0    conda-forge
+pip                       24.0               pyhd8ed1ab_0    conda-forge
+pycparser                 2.22                     pypi_0    pypi
+pydantic                  2.7.0              pyhd8ed1ab_0    conda-forge
+pydantic-core             2.18.1          py312h4b3b743_0    conda-forge
+pyjwt                     2.8.0                    pypi_0    pypi
+python                    3.12.2          hab00c5b_0_cpython    conda-forge
+python_abi                3.12                    4_cp312    conda-forge
+readline                  8.2                  h8228510_1    conda-forge
+setuptools                69.2.0             pyhd8ed1ab_0    conda-forge
+sqlparse                  0.4.4              pyhd8ed1ab_0    conda-forge
+tk                        8.6.13          noxft_h4845f30_101    conda-forge
+typing-extensions         4.11.0               hd8ed1ab_0    conda-forge
+typing_extensions         4.11.0             pyha770c72_0    conda-forge
+tzdata                    2024a                h0c530f3_0    conda-forge
+wheel                     0.43.0             pyhd8ed1ab_0    conda-forge
+xz                        5.2.6                h166bdaf_0    conda-forge

@@ -1,4 +1,4 @@
-STUDY_MOA# STUDY_MOA
+# STUDY_MOA
 
 STUDY_MOA는 다양한 스터디 모임을 쉽게 찾고 참여할 수 있도록 돕는 웹사이트입니다. 사용자들은 공부하기 좋은 카페 추천과 모임 후기를 확인할 수 있으며, 새로운 모임을 모집하거나 기존 모임에 참여할 수 있습니다.
 
@@ -20,9 +20,9 @@ STUDY_MOA는 다양한 스터디 모임을 쉽게 찾고 참여할 수 있도록
 
 ### 요구 사항
 
-- Python 3.x
-- Django 3.x
-- 기타 패키지는 `requirements.txt` 파일을 참고하세요.
+- Python 3.12.2
+- Django 5.0.6
+- svelte 4.2.15
 
 ### 설치
 
@@ -36,17 +36,14 @@ STUDY_MOA는 다양한 스터디 모임을 쉽게 찾고 참여할 수 있도록
 
     ```bash
     conda activate webapp
-    conda create -n django python=3.8
+    conda create -n django
     conda activate django
     ```
 
 3. 필요한 패키지를 설치합니다.
 
     ```bash
-    npm install
-    npm install flowbite-svelte date-fns
-    conda install django djangorestframework
-
+        [패키지 확인](/packages.txt)
     ```
 
 4. 데이터베이스를 설정합니다.
@@ -67,7 +64,7 @@ STUDY_MOA는 다양한 스터디 모임을 쉽게 찾고 참여할 수 있도록
 
 - **백엔드**: Django
 - **프론트엔드**: svelte
-- **데이터베이스**: 
+- **데이터베이스**: SQLite
 
 ## contribute 방법
 
